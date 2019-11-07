@@ -1,54 +1,49 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import ArtistDeck from './Artist-Deck';
 import Search from '../components/Search';
 import { getArtists } from '../services/artist-api';
 import styles from './Home.css';
 
-export default class Home extends Component {
-  state = {
-    artists: [],
-    searchTerm: '',
-    page: 1
+export default function Home() {
+  const [artists, setArtists] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [page, setPage] = useState(1);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    getArtistsByPage(page);
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    this.getArtistsByPage(this.state.page);
-  }
+  const handleChange = ({ target }) => {
+    setSearchTerm(target.value);
+  };
 
-  handleChange = ({ target }) => {
-    this.setState({ searchTerm: target.value });
-  }
+  const handleBack = () => {
+    const newPage = Math.max(1, page - 1);
+    getArtistsByPage(newPage);
+    setPage(newPage);
+  };
 
-  handleBack = () => {
-    const newPage = Math.max(1, this.state.page - 1);
-    this.getArtistsByPage(newPage);
-    this.setState({ page: newPage });
-  }
+  const handleNext = () => {
+    getArtistsByPage(page + 1);
+    setPage(page + 1);
+  };
 
-  handleNext = () => {
-    this.getArtistsByPage(this.state.page + 1);
-    this.setState({ page: this.state.page + 1 });
-  }
-
-  getArtistsByPage = page => {
-    getArtists(this.state.searchTerm, page)
+  const getArtistsByPage = page => {
+    getArtists(searchTerm, page)
       .then(({ artists }) => {
-        this.setState({ artists });
+        setArtists(artists);
       });
-  }
-
-  render() {
-    return (
-      <div className={styles.Home}>
-        <Search
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange} />
-        <ArtistDeck
-          artists={this.state.artists}
-          handleBack={this.handleBack}
-          handleNext={this.handleNext} />
-      </div>
-    );
-  }
+  };
+  return (
+    <div className={styles.Home}>
+      <Search
+        handleSubmit={handleSubmit}
+        handleChange={handleChange} />
+      <ArtistDeck
+        artists={artists}
+        handleBack={handleBack}
+        handleNext={handleNext} />
+    </div>
+  );
 }

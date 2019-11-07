@@ -4,7 +4,6 @@ import getLyrics from '../services/lyrics-api';
 import styles from './Lyrics.css';
 
 export default function Lyrics({ match }) {
-
   const [lyrics, setLyrics] = useState('');
 
   useEffect(() => {
@@ -13,7 +12,6 @@ export default function Lyrics({ match }) {
         setLyrics(lyrics);
       });
   }, [match.params.artist, match.params.track]);
-
 
   return (
     <>
