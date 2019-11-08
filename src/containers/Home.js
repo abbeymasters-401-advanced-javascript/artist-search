@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ArtistDeck from './Artist-Deck';
 import Search from '../components/Search';
 import { getArtists } from '../services/artist-api';

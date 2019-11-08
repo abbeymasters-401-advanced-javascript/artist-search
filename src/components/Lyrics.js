@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import getLyrics from '../services/lyrics-api';
+// import getLyrics from '../services/lyrics-api';
 import styles from './Lyrics.css';
+import { useLyrics } from '../customHooks/useLyrics';
 
 export default function Lyrics({ match }) {
-  const [lyrics, setLyrics] = useState('');
-
-  useEffect(() => {
-    getLyrics(match.params.artist, match.params.track)
-      .then(({ lyrics }) => {
-        setLyrics(lyrics);
-      });
-  }, [match.params.artist, match.params.track]);
+  const lyrics = useLyrics();
 
   return (
     <>
