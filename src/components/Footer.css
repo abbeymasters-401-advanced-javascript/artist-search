@@ -1,0 +1,11 @@
+.Footer {
+  background: #d5a7db;
+  color: black;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  font-family: 'Questrial', sans-serif;
+  font-weight: 700;
+  padding: 28px;
+}

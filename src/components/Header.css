@@ -1,0 +1,36 @@
+.Header {
+  text-align: center;
+  background: #ab2576;
+  color: whitesmoke;
+  height: 200px;
+  position: relative;
+
+  h1 {
+    font-size: 50pt;
+    padding: 40px;
+    font-family: 'Bowlby One SC', cursive;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #296178;
+    color: whitesmoke;
+    height: 50px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: .25em;
+    font-weight: 700;
+  }
+}

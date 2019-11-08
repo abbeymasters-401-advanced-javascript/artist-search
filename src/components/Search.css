@@ -1,0 +1,32 @@
+.Search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+
+  button {
+    width: 50.65%;
+    background: #e97e31;
+    color: whitesmoke;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 700;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(233, 126, 49, 0.75);
+    }
+  }
+
+  input {
+    width: 50%;
+    margin: .5rem;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Questrial', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+}

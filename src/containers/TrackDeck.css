@@ -1,0 +1,40 @@
+.TrackDeck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    color: #e97e31;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 35px;
+    line-height: 1.1em;
+    margin-top: 1em;
+  }
+
+  h3 {
+    color: black;
+    font-family: 'Questrial', sans-serif;
+    line-height: 1.1em;
+    margin-bottom: 1em;
+    font-size: 20pt;
+  }
+
+  ul {
+    width: 50em;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Questrial', sans-serif;
+    line-height: 1.1em;
+  }
+
+  a:hover {
+    color: #459DB4;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
